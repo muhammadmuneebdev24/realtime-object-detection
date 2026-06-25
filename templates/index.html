@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Detection & Tracking</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Object Detection & Tracking</h1>
+        <p class="subtitle">YOLOv8n + Deep SORT — Real-time</p>
+
+        {% if streaming %}
+        <!-- ── STREAM VIEW ── -->
+        <div class="stream-box">
+            <img src="/video_feed" alt="Live feed" id="feed">
+        </div>
+        <div class="controls">
+            <span class="badge">
+                {% if source_type == "webcam" %}📷 Webcam Live{% else %}🎬 Video File{% endif %}
+            </span>
+            <a href="/stop" class="btn btn-red">⏹ Stop</a>
+        </div>
+
+        {% else %}
+        <!-- ── HOME VIEW ── -->
+        <div class="cards">
+
+            <div class="card">
+                <h2>📷 Webcam</h2>
+                <p>Start real-time detection from your camera.</p>
+                <form action="/start_webcam" method="post">
+                    <button type="submit" class="btn btn-green">Start Webcam</button>
+                </form>
+            </div>
+
+            <div class="card">
+                <h2>🎬 Video File</h2>
+                <p>Upload a video file and run detection on it.</p>
+                <form action="/start_video" method="post" enctype="multipart/form-data">
+                    <input type="file" name="file" accept="video/*" required id="video-file">
+                    <button type="submit" class="btn btn-blue">Start Video</button>
+                </form>
+            </div>
+
+        </div>
+        {% endif %}
+    </div>
+
+</body>
+</html>
