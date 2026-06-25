@@ -60,14 +60,14 @@ The YOLOv8 model will download automatically on first run (about 6MB).
 
 ```
 Object_Detection/
-├── main.py          # FastAPI app, video stream logic
-├── detector.py      # YOLOv8 object detection
-├── tracker.py       # Simple IoU-based tracker
+├── main.py        
+├── detector.py      
+├── tracker.py       
 ├── templates/
-│   └── index.html   # Main webpage
+│   └── index.html  
 ├── static/
-│   └── style.css    # Basic styles
-├── uploads/         # Uploaded videos stored here
+│   └── style.css    
+├── uploads/        
 └── requirements.txt
 ```
 
