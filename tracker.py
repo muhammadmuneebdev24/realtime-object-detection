@@ -1,8 +1,4 @@
-"""
-Simple IoU-based tracker — no neural net, no external deps, instant speed.
-Matches detections frame-to-frame by overlap (IoU). Tracks disappear after
-max_age missed frames, so no ghost boxes.
-"""
+
 
 def iou(a, b):
     ax1, ay1, ax2, ay2 = a
